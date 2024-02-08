@@ -18,7 +18,7 @@ export default function MovieForMe() {
   const [showFilter, setShowFilter] = useState(false);
   const isFilterSet = localStorage.getItem("filter") ? true : false;
   const [myFilter, setMyFilter] = useState(
-    JSON.parse(localStorage.getItem("filter") || "") || {
+    JSON.parse(localStorage.getItem("filter") as string) || {
       gener: [],
       yearOfRelease: { start: 2023, end: 2023 },
       ratingFromSrc: { imdb: 0, metacritic: 0, rottenTomato: 0 },
